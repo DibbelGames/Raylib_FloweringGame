@@ -1,2 +1,2 @@
 # Raylib_FloweringGame
-small game made with raylib about gardening
+small game with crappy code, made with raylib about gardening
