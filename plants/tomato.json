@@ -1,0 +1,6 @@
+{
+    "name": "Tomato",
+    "textureID": 1,
+    "growRate": 90,
+    "maxSize": 12
+}

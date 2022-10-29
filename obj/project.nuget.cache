@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "4x13X9bQTsHl2MShmEKlbx+GcbccDE+FzELfHPXOKaj1MoHDBye/MyTP+lmL4ZAwQmAMUueRlZk3UWeZ700sfg==",
+  "success": true,
+  "projectFilePath": "/home/leon/Documents/GardeningGame/GardeningGame.csproj",
+  "expectedPackageFiles": [
+    "/home/leon/.nuget/packages/raylib-cs/4.2.0.1/raylib-cs.4.2.0.1.nupkg.sha512",
+    "/home/leon/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
