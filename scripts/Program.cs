@@ -6,24 +6,18 @@ namespace GardeningGame
 {
     static class Program
     {
-        static int WINDOW_WIDTH = 1280;
-        static int WINDOW_HEIGHT = 704;
+        const int WINDOW_WIDTH = 1280;
+        const int WINDOW_HEIGHT = 704;
 
-        static GameScene gamescene = new GameScene();
-
+        static IGameScene gamescene = new GameScene();
 
         public static void Main()
         {
             Raylib.InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Gardening Game");
-            Raylib.SetWindowIcon(LoadImage("img/icon.png"));
+            Raylib.SetWindowIcon(LoadImage("img/ui/icon.png"));
             Raylib.SetTargetFPS(60);
 
-            gamescene.Main();
-
-            while (!Raylib.WindowShouldClose())
-            {
-                //be useless
-            }
+            gamescene.Init();
 
             Raylib.CloseWindow();
         }

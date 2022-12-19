@@ -33,12 +33,6 @@ namespace GardeningGame
             }
         }
 
-        public void Grow()
-        {
-            if (!isHarvestable())
-                size++;
-        }
-
         public void Tick()
         {
             tickCounter++;
@@ -47,6 +41,12 @@ namespace GardeningGame
                 Grow();
                 tickCounter = 0;
             }
+        }
+
+        public void Grow()
+        {
+            if (!isHarvestable())
+                size++;
         }
 
         public bool isHarvestable()

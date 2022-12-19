@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/leon/Documents/GardeningGame/GardeningGame.csproj": {}
+    "/home/leon/Documents/Github/Raylib_FloweringGame/GardeningGame.csproj": {}
   },
   "projects": {
-    "/home/leon/Documents/GardeningGame/GardeningGame.csproj": {
+    "/home/leon/Documents/Github/Raylib_FloweringGame/GardeningGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/leon/Documents/GardeningGame/GardeningGame.csproj",
+        "projectUniqueName": "/home/leon/Documents/Github/Raylib_FloweringGame/GardeningGame.csproj",
         "projectName": "GardeningGame",
-        "projectPath": "/home/leon/Documents/GardeningGame/GardeningGame.csproj",
+        "projectPath": "/home/leon/Documents/Github/Raylib_FloweringGame/GardeningGame.csproj",
         "packagesPath": "/home/leon/.nuget/packages/",
-        "outputPath": "/home/leon/Documents/GardeningGame/obj/",
+        "outputPath": "/home/leon/Documents/Github/Raylib_FloweringGame/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/leon/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -35,8 +35,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Raylib-cs": {
               "target": "Package",
@@ -54,12 +54,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.0, 7.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
