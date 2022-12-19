@@ -22,7 +22,7 @@ namespace GardeningGame
 
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE))
             {
-                BulidTile();
+                PlaceTile();
             }
         }
 
@@ -31,7 +31,7 @@ namespace GardeningGame
             selectedTile = tile;
         }
 
-        public void BulidTile()
+        public void PlaceTile()
         {
             if (selectedTile == "pot")
                 new Pot(scene.textureManager, new Vector2(640, 320), scene.WINDOW_HEIGHT - 320, scene);
