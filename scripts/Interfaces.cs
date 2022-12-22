@@ -12,8 +12,8 @@ namespace GardeningGame
         TextureManager textureManager { get; }
         UIManager uiManager { get; }
         PotManager potManager { get; }
-        BuildingManager buildingManager { get; }
         LayerManager layerManager { get; }
+        BuildingManager buildingManager { get; }
         Player player { get; }
     }
     public interface IActor

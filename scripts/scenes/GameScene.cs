@@ -29,10 +29,11 @@ namespace GardeningGame
 
         public void Init()
         {
-            while (!Raylib.WindowShouldClose())
+            while (!WindowShouldClose())
             {
-                Raylib.BeginDrawing();
+                BeginDrawing();
 
+                //draw Grid
                 for (int width = 0; width < WINDOW_WIDTH; width += textureManager.gridtile.width)
                 {
                     for (int height = 0; height < WINDOW_HEIGHT; height += textureManager.gridtile.height)
@@ -47,17 +48,17 @@ namespace GardeningGame
                 buildingManager.Main();
                 debugger.Main();
 
-                Raylib.ClearBackground(bgColor);
+                ClearBackground(bgColor);
 
                 /*if (IsMouseButtonPressed(0))
                 {
                     potManager.pots[0].AddPlant("tomato");
                 }*/
 
-                Raylib.EndDrawing();
+                EndDrawing();
             }
 
-            Raylib.CloseWindow();
+            CloseWindow();
         }
     }
 }

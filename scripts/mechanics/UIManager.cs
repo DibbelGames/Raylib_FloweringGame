@@ -35,7 +35,7 @@ namespace GardeningGame
 
         public void Draw()
         {
-            Raylib.DrawTextureRec(textureManager.letters_texture, textureManager.letterRec(letter), position, Color.RAYWHITE);
+            DrawTextureRec(textureManager.letters_texture, textureManager.letterRec(letter), position, Color.RAYWHITE);
         }
     }
 
@@ -45,18 +45,20 @@ namespace GardeningGame
         Vector2 position;
         int fontSize;
         Color color;
+        Font font;
 
-        public Text(string content, Vector2 position, int fontSize, Color color)
+        public Text(string content, Vector2 position, int fontSize, Color color, Font font)
         {
             this.content = content;
             this.position = position;
             this.fontSize = fontSize;
             this.color = color;
+            this.font = font;
         }
 
         public void Draw()
         {
-            Raylib.DrawText(content, (int)position.X, (int)position.Y, fontSize, color);
+            DrawTextEx(font, content, position, fontSize, 3, color);
         }
     }
 
@@ -73,43 +75,59 @@ namespace GardeningGame
 
         public void Draw()
         {
-            Raylib.DrawTextureV(sprite, position, Color.RAYWHITE);
+            DrawTextureV(sprite, position, Color.RAYWHITE);
         }
     }
 
     public class Button : UIElement
     {
-        Texture2D sprite;
+        Texture2D regular;
+        Texture2D alternative;
         Vector2 position;
 
         Color selected = new Color(217, 217, 217, 255);
         Color pressed = new Color(199, 199, 199, 255);
-        Action action;
+        Action pressAction;
+        Action? hoverAction;
 
-        public Button(Texture2D sprite, Vector2 position, Action action)
+        public bool isHovering;
+
+        public Button(Texture2D regular, /*Texture2D alternative,*/ Vector2 position, Action pressAction, Action? hoverAction = null)
         {
-            this.sprite = sprite;
+            this.regular = regular;
+            //this.alternative = alternative;
             this.position = position;
-            this.action = action;
+            this.pressAction = pressAction;
+            this.hoverAction = hoverAction;
         }
 
-        public void Draw()
+        public void Draw(/*int texture*/)
         {
-            if (Raylib.CheckCollisionPointRec(Raylib.GetMousePosition(), new Rectangle(position.X, position.Y, sprite.width, sprite.height)))
+            /*Texture2D sprite;
+            if (texture == 0)
+                sprite = regular;
+            else
+                sprite = alternative;*/
+
+            if (CheckCollisionPointRec(GetMousePosition(), new Rectangle(position.X, position.Y, regular.width, regular.height)))
             {
-                if (Raylib.IsMouseButtonDown(0))
+                if (IsMouseButtonDown(0))
                 {
-                    Raylib.DrawTextureV(sprite, position, pressed);
-                    action();
+                    DrawTextureV(regular, position, pressed);
+                    pressAction();
                 }
                 else
                 {
-                    Raylib.DrawTextureV(sprite, position, selected);
+                    DrawTextureV(regular, position, selected);
+                    isHovering = true;
+                    if (hoverAction != null)
+                        hoverAction();
                 }
             }
             else
             {
-                Raylib.DrawTextureV(sprite, position, Color.RAYWHITE);
+                isHovering = false;
+                DrawTextureV(regular, position, Color.RAYWHITE);
             }
         }
     }

@@ -21,7 +21,7 @@ namespace GardeningGame
 
     class Pot : IActor, ITile
     {
-        private Debugger? debugger;
+        private Debugger debugger;
         private TextureManager textureManager;
 
         private Texture2D emptyPot;

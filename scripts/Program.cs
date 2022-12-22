@@ -13,13 +13,13 @@ namespace GardeningGame
 
         public static void Main()
         {
-            Raylib.InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Gardening Game");
-            Raylib.SetWindowIcon(LoadImage("img/ui/icon.png"));
-            Raylib.SetTargetFPS(60);
+            InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Gardening Game");
+            SetWindowIcon(LoadImage("img/ui/icon.png"));
+            SetTargetFPS(60);
 
             gamescene.Init();
 
-            Raylib.CloseWindow();
+            CloseWindow();
         }
     }
 }

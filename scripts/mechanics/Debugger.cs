@@ -1,6 +1,7 @@
-using Raylib_cs;
 using System.Numerics;
 using System.Collections.Generic;
+using Raylib_cs;
+using static Raylib_cs.Raylib;
 
 namespace GardeningGame
 {
@@ -10,21 +11,21 @@ namespace GardeningGame
 
         public void Main()
         {
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_F3))
+            if (IsKeyPressed(KeyboardKey.KEY_F3))
             {
                 showInfo = !showInfo;
             }
 
             if (showInfo)
             {
-                Raylib.DrawFPS(0, 0);
+                DrawFPS(0, 0);
             }
         }
 
         public void ShowText(DebugInfo info)
         {
             if (showInfo)
-                Raylib.DrawText(info.infoText, (int)info.position.X, (int)info.position.Y, 16, info.color);
+                DrawText(info.infoText, (int)info.position.X, (int)info.position.Y, 16, info.color);
         }
 
         public void ShowGizmo(Gizmo gizmo)
@@ -68,7 +69,7 @@ namespace GardeningGame
 
         public void Draw()
         {
-            Raylib.DrawCircleV(position, radius, color);
+            DrawCircleV(position, radius, color);
         }
     }
 }
