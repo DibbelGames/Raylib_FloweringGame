@@ -34,13 +34,17 @@ namespace GardeningGame
                 BeginDrawing();
 
                 //draw Grid
-                for (int width = 0; width < WINDOW_WIDTH; width += textureManager.gridtile.width)
+                /*for (int width = 0; width < WINDOW_WIDTH; width += textureManager.gridtile.width)
                 {
                     for (int height = 0; height < WINDOW_HEIGHT; height += textureManager.gridtile.height)
                     {
                         DrawTexture(textureManager.gridtile, width, height, Color.RAYWHITE);
                     }
-                }
+                }*/
+                DrawTexture(textureManager.gamescene_room, 0, 0, Color.RAYWHITE);
+
+                //Props
+                Sink sink = new Sink(new Vector2(1216, 512), this);
 
                 layerManager.Main();
                 player.Main();
@@ -48,12 +52,9 @@ namespace GardeningGame
                 buildingManager.Main();
                 debugger.Main();
 
-                ClearBackground(bgColor);
+                buildingManager.tiles.Add(sink);
 
-                /*if (IsMouseButtonPressed(0))
-                {
-                    potManager.pots[0].AddPlant("tomato");
-                }*/
+                ClearBackground(bgColor);
 
                 EndDrawing();
             }

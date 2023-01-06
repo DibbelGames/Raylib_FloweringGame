@@ -24,7 +24,6 @@ namespace GardeningGame
     public interface ITile
     {
         Vector2 position { get; }
-        //just for testing
-        int resources { get; }
+        public void Tick();
     }
 }

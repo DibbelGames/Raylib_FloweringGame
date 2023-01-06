@@ -33,6 +33,11 @@ namespace GardeningGame
 
         public void Main()
         {
+            for (int i = 0; i < tiles.Count(); i++)
+            {
+                tiles[i].Tick();
+            }
+
             if (!isBuilding) return;
 
             //a probably way to clunky solution
@@ -46,7 +51,7 @@ namespace GardeningGame
             {
                 for (int width = 0; width < scene.WINDOW_WIDTH; width += scene.textureManager.gridtile.width)
                 {
-                    for (int height = 0; height < scene.WINDOW_HEIGHT; height += scene.textureManager.gridtile.height)
+                    for (int height = 128; height < scene.WINDOW_HEIGHT; height += scene.textureManager.gridtile.height)
                     {
                         if (mouse_x > width && mouse_x < width + scene.textureManager.gridtile.width)
                         {
@@ -82,11 +87,13 @@ namespace GardeningGame
 
         public void PlaceTile(Vector2 position)
         {
+            ITile newTile = new EmptyTile();
             if (selectedTile == "pot")
             {
-                Pot newPot = new Pot(scene.textureManager, position, scene.WINDOW_HEIGHT - (int)position.Y, scene);
-                tiles.Add(newPot);
+                newTile = new Pot(scene.textureManager, position, scene.WINDOW_HEIGHT - (int)position.Y, scene);
             }
+
+            tiles.Add(newTile);
 
             selectedTile = "";
         }
@@ -110,5 +117,7 @@ namespace GardeningGame
     {
         public Vector2 position { get; set; } = new Vector2(6969, 420420);
         public int resources { get; set; }
+
+        public void Tick() { }
     }
 }

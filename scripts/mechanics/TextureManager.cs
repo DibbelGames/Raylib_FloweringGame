@@ -18,6 +18,12 @@ namespace GardeningGame
             LoadTexture("img/plants/pot_blumato.png")
         };
 
+        //scenes
+        public Texture2D gamescene_room = LoadTexture("img/scenes/gamescene/room.png");
+
+        //props
+        public Texture2D sink = LoadTexture("/img/scenes/gamescene.sink.png");
+
         //ui
         public Texture2D potButton = LoadTexture("img/ui/building/building_button_pot.png");
         public Texture2D placingSplacingIndicator = LoadTexture("img/ui/building/placing_indicator.png");

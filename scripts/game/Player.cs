@@ -30,6 +30,8 @@ namespace GardeningGame
             this.scene = currentScene;
 
             scene.layerManager.actors.Add(this);
+
+            position = new Vector2(0, 128);
         }
 
         public void Main()
@@ -127,9 +129,16 @@ namespace GardeningGame
             {
                 this.currentDirection = direction;
 
-                foreach (Pot pot in scene.potManager.Pots)
+                //block walls
+                if (position.Y + direction.Y * stepSize < 128 || position.Y + direction.Y * stepSize > 640 || position.X + direction.X * stepSize < 0 || position.X + direction.X * stepSize > 1216)
                 {
-                    if (pot.position == (position + direction * stepSize) - new Vector2(0, 64))
+                    return;
+                }
+
+                //check for obstacles
+                foreach (ITile tile in scene.buildingManager.tiles)
+                {
+                    if (tile.position == (position + direction * stepSize) - new Vector2(0, 64))
                         return;
                 }
 
